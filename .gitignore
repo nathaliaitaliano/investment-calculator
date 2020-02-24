@@ -1,3 +1,6 @@
 .vs
 InvestmentCalculator/bin
 InvestmentCalculator/obj
+InvestmentCalculatorTests/bin
+InvestmentCalculatorTests/obj
+packages
