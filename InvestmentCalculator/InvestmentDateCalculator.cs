@@ -9,7 +9,7 @@ namespace InvestmentCalculator
 {
     public class InvestmentDateCalculator
     {
-        public DateTime GetBuyDate(DateTime referenceDate)
+        public DateTime GetBuyDate(DateTime referenceDate, StockHistory history)
         {
 
             int lastDay = DateTime.DaysInMonth(referenceDate.Year, referenceDate.Month);
@@ -19,7 +19,11 @@ namespace InvestmentCalculator
             {
                 lastDate = lastDate.AddDays(-1);
             }
-            return lastDate.AddDays(1);
+            do
+            {
+                lastDate = lastDate.AddDays(1);
+            } while(!history.HasQuoteOnDate(lastDate));
+            return lastDate;
         }
 
     }

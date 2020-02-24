@@ -27,11 +27,7 @@ namespace InvestmentCalculator
 
         public bool HasQuoteOnDate(DateTime date)
         {
-            if (history.ContainsKey(date))
-            {
-                return true;
-            }
-            return false;
+            return history.ContainsKey(date);
         }
     }
 }
