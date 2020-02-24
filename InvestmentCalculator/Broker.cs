@@ -18,13 +18,13 @@ namespace InvestmentCalculator
         public double BuyStocks(double investmentMoney, Quote quote)
         {
             double stocksQuantity = investmentMoney * brokerTax / quote.opening;
-            return stocksQuantity;
+            return Math.Round(stocksQuantity, 3);
         }
 
         public double SellStocks(double stocksQuantity, Quote quote)
         {
             double totalPrice = stocksQuantity * quote.closing;
-            return totalPrice;
+            return Math.Round(totalPrice, 3);
         }
     }
 }
