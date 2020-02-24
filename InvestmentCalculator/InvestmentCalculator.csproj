@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Broker.cs" />
+    <Compile Include="Investment.cs" />
     <Compile Include="Wallet.cs" />
     <Compile Include="InvestmentDateCalculator.cs" />
     <Compile Include="CsvReader.cs" />
