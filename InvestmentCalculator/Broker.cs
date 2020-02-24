@@ -17,7 +17,14 @@ namespace InvestmentCalculator
 
         public double BuyStocks(double investmentMoney, Quote quote)
         {
-            return investmentMoney * this.brokerTax / quote.opening;
+            double stocksQuantity = investmentMoney * brokerTax / quote.opening;
+            return stocksQuantity;
+        }
+
+        public double SellStocks(double stocksQuantity, Quote quote)
+        {
+            double totalPrice = stocksQuantity * quote.closing;
+            return totalPrice;
         }
     }
 }

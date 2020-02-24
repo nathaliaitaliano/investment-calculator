@@ -20,7 +20,7 @@ namespace InvestmentCalculator.Tests
             double investment = 10;
             double stocksQuantity = 5;
 
-            Assert.AreEqual(broker.BuyStocks(investment, quote), stocksQuantity);
+            Assert.AreEqual(stocksQuantity, broker.BuyStocks(investment, quote));
         }
 
         [TestMethod()]
@@ -32,7 +32,19 @@ namespace InvestmentCalculator.Tests
             double investment = 8;
             double stocksQuantity = 1;
 
-            Assert.AreEqual(broker.BuyStocks(investment, quote), stocksQuantity);
+            Assert.AreEqual(stocksQuantity, broker.BuyStocks(investment, quote));
+        }
+
+        [TestMethod()]
+        public void Test_if_broker_can_make_a_stock_selling()
+        {
+            var broker = new Broker(0);
+            Quote quote = new Quote(1, 2);
+
+            double stocksQuantity = 5;
+            double totalPrice = 10;
+
+            Assert.AreEqual(totalPrice, broker.SellStocks(stocksQuantity, quote));
         }
     }
 }
