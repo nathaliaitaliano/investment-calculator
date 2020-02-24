@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BrokerTests.cs" />
+    <Compile Include="InvestmentDateCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
