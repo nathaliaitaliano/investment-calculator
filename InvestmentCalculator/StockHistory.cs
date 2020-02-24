@@ -24,5 +24,14 @@ namespace InvestmentCalculator
         {
             return this.history[date];
         }
+
+        public bool HasQuoteOnDate(DateTime date)
+        {
+            if (history.ContainsKey(date))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
