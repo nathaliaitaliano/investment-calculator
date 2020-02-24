@@ -1,9 +1,7 @@
 .vs
 InvestmentCalculator/bin
 InvestmentCalculator/obj
-InvestmentCalculator/InvestmentCalculator.csproj
 InvestmentCalculatorTests/bin
 InvestmentCalculatorTests/obj
-InvestmentCalculatorTests/InvestmentCalculatorTests.csproj
 TestResults
 packages
