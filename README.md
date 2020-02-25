@@ -30,13 +30,19 @@ I tried apply the 10x10x10 rule and separated classes per responsibility.  For s
 #### *CsvReader.cs
 CsvReader is responsible for management the stock data from a csv file (stocks-ITX.csv). Is able to read and to parse the data for the necessary type (basically two main types: *double* and *DataTime*).
 #### *StockHistory.cs
-StockHistory use a
+StockHistory is responsible to create a object history with the data information provide by CsvReader. Here I use a Map class to attribute a key(Date) to value(opening quote and closing quote ). Also knows when a date is present in the data stock.
 #### *Quote.cs
+Quote is a class that allows, through a constructor, access to the opening quote and closing quote for the stocks.
 #### *InvestmentDateCalculator.cs
+InvestmentDateCalculator return the buy date for each investment month. In this class I have to use the properties of DaysInMonth and DaysOfWeek to calculate the exactly day to buy stocks.
 #### *Broker.cs
+Broker make the management the stocks transactions (buy and sell). Has the logic to calculate the stocks quantity buy in each month and the total sell price. Also, for each stock buy, the broker discount a tax.
 #### *Investment.cs
+Investment is the class which one controls the open and close to the wallet and how much the client want invest in stocks. Works with the opening investment date and closing investment date. 
 #### *Wallet.cs
+Wallet is responsible for Add every stock that a broker buy. Also returns the total stocks quantity what belongs to the client.
 #### *Program.cs
+Program class returns the total price of a wallet sale. Use the others class to calculate this price. Here was declared the real value parameters, provides by the challenge, to get a total price. Also is the class responsibly to print in console the final result.
 
 ## Improvement for the future
 I think it is possible improve  the code in some aspects.
