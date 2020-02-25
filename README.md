@@ -50,8 +50,11 @@ Program class returns the total price of a wallet sale. Use the others class to 
 I think it is possible improve  the code in some aspects.
 
 > Refactor the code: To make it more legible
+>
 > Apply the SOLID principle
+>
 > Work with exceptions
+>
 > Improve the information returned in the program
 
 ## Technology Stack
