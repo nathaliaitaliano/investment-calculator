@@ -20,11 +20,12 @@ namespace InvestmentCalculator
         {
             Wallet wallet = new Wallet();
             DateTime currentMonth = openingDate;
+            DateTime limitDate = closeDate;
             InvestmentDateCalculator investmentDateCalculator = new InvestmentDateCalculator();
 
             while (currentMonth < closeDate)
             {
-                DateTime investmentDate = investmentDateCalculator.GetBuyDate(currentMonth, history);
+                DateTime investmentDate = investmentDateCalculator.GetBuyDate(currentMonth, history, limitDate);
                 Quote quote = history.Get(investmentDate);
                 double totalStocks = broker.BuyStocks(amount, quote);
                 wallet.AddStocks(totalStocks);

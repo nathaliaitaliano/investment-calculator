@@ -9,22 +9,28 @@ namespace InvestmentCalculator
 {
     public class InvestmentDateCalculator
     {
-        public DateTime GetBuyDate(DateTime referenceDate, StockHistory history)
+        public DateTime GetBuyDate(DateTime referenceDate, StockHistory history, DateTime limitDate)
         {
-
             int lastDay = DateTime.DaysInMonth(referenceDate.Year, referenceDate.Month);
             DateTime lastDate = new DateTime(referenceDate.Year, referenceDate.Month, lastDay);
+            DateTime buyDate = lastDate;
 
-            while(lastDate.DayOfWeek != DayOfWeek.Thursday)
+            while(buyDate.DayOfWeek != DayOfWeek.Thursday)
             {
-                lastDate = lastDate.AddDays(-1);
+                buyDate = buyDate.AddDays(-1);
             }
-            do
-            {
-                lastDate = lastDate.AddDays(1);
-            } while(!history.HasQuoteOnDate(lastDate));
-            return lastDate;
-        }
 
+            buyDate = buyDate.AddDays(1);
+
+            if (buyDate >= limitDate) {
+                return limitDate;
+            }
+
+            while (buyDate < limitDate && !history.HasQuoteOnDate(buyDate))
+            {
+                buyDate = buyDate.AddDays(1);
+            }
+            return buyDate;
+        }
     }
 }
